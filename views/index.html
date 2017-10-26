@@ -1,0 +1,29 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script src="ajax.js"></script>
+</head>
+<body>
+<div id='setText'>
+    <input type='text' id='titText'>
+	<input type='text' id='txtInner'></input>
+	<input type="button" value='提交' id='btn'>
+</div>
+<div id='textWZ'></div>
+<ul id='ul'></ul>
+ <script type="text/javascript">
+        ajax({
+				url:'http://localhost:8080',
+				type:'POST',
+				data:{
+					titleName:iTarget.innerHTML
+				},
+				success:function(data){
+					textWZ.innerHTML = data;
+				}
+			})
+</script>
+</body> 
+</html>
